@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Другие книги автора</title>
+
+  <style>
+
+    :root {
+
+      --primary: #2c3e50;
+
+      --accent: #e67e22;
+
+      --bg: #f4f6f9;
+
+      --text: #333;
+
+    }
+
+    body {
+
+      font-family: Arial, sans-serif;
+
+      margin: 0;
+
+      padding: 0;
+
+      background: var(--bg);
+
+      color: var(--text);
+
+    }
+
+    header {
+
+      background: white;
+
+      padding: 1.5rem 2rem;
+
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+    }
+
+    .header-container {
+
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 1rem;
+
+    }
+
+    .logo {
+
+      font-weight: bold;
+
+      font-size: 1.8rem;
+
+      color: var(--primary);
+
+      line-height: 1;
+
+    }
+
+    .nav-links a {
+
+      margin-left: 0.8rem;
+
+      text-decoration: none;
+
+      color: var(--primary);
+
+      font-weight: 800;
+
+      font-size: 1.6rem;
+
+      padding: 0.9rem 1.2rem;
+
+      border-radius: 8px;
+
+      transition: background 0.2s;
+
+    }
+
+    .nav-links a:hover { background: #eee; }
+
+    .main-container {
+
+      max-width: 1100px;
+
+      margin: 0 auto;
+
+      padding: 2rem;
+
+    }
+
+    h1 { text-align: center; }
+
+    .books-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+      gap: 2.5rem;
+
+    }
+
+    .book-card {
+
+      background: white;
+
+      padding: 2rem;
+
+      border-radius: 10px;
+
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+
+      text-align: center;
+
+    }
+
+    .book-card img {
+
+      width: 100%;
+
+      height: auto;
+
+      max-width: 200px;
+
+      border-radius: 8px;
+
+      margin-bottom: 1.5rem;
+
+    }
+
+    .btn {
+
+      padding: 1.6rem 2.4rem;
+
+      font-size: 1.3rem;
+
+      border: none;
+
+      border-radius: 10px;
+
+      cursor: pointer;
+
+      font-weight: 800;
+
+      text-decoration: none;
+
+      color: white;
+
+      background: var(--accent);
+
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+
+      transition: transform 0.15s;
+
+    }
+
+    .btn:active { transform: scale(0.97); }
+
+ 
+
+    @media (max-width: 768px) {
+
+      .header-container { flex-direction: column; gap: 1.2rem; }
+
+      .nav-links a {
+
+        margin: 0.6rem auto;
+
+        display: block;
+
+        text-align: center;
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+      }
+
+      .btn {
+
+        width: 100%;
+
+        text-align: center;
+
+        box-sizing: border-box;
+
+        padding: 1.4rem 1rem;
+
+      }
+
+      .logo { font-size: 1.6rem; }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <div class="header-container">
+
+      <div class="logo">Книги [Имя Автора]</div>
+
+      <nav class="nav-links">
+
+        <a href="index.html">Главная</a>
+
+        <a href="books.html">Другие книги</a>
+
+        <a href="about.html">Об авторе</a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+ 
+
+  <main class="main-container">
+
+    <h1>Другие книги автора</h1>
+
+    <p style="text-align:center;">В этом каталоге будут появляться новые проекты, а также ссылки на уже опубликованные книги.</p>
+
+    <div class="books-grid">
+
+      <!-- Карточка «Борис» -->
+
+      <article class="book-card">
+
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 300'%3E%3Crect width='100%25' height='100%25' fill='%232c3e50'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='18' font-family='Arial,sans-serif' fill='%23ecf0f1' font-weight='bold'%3EBoris%3C/text%3E%3C/svg%3E" alt="Обложка «Борис»">
+
+        <h3>«Борис»</h3>
+
+        <p>Фэнтези, психология, магия как ответственность.</p>
+
+        <a href="index.html" class="btn">Подробнее</a>
+
+      </article>
+
+ 
+
+      <!-- Карточка «Город без отражений» -->
+
+      <article class="book-card">
+
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 300'%3E%3Crect width='100%25' height='100%25' fill='%2334495e'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='16' font-family='Arial,sans-serif' fill='%23ecf0f1' font-weight='bold'%3ECity%3C/text%3E%3C/svg%3E" alt="Обложка новой книги">
+
+        <h3>«Город без отражений»</h3>
+
+        <p>Мрачное городское фэнтези, тайны мегаполиса.</p>
+
+        <a href="book-mystery-city.html" class="btn">Подробнее</a>
+
+      </article>
+
+ 
+
+      <!-- Карточка «Тени за спиной» -->
+
+      <article class="book-card">
+
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 300'%3E%3Crect width='100%25' height='100%25' fill='%237f8c8d'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='16' font-family='Arial,sans-serif' fill='%23ecf0f1' font-weight='bold'%3EShadows%3C/text%3E%3C/svg%3E" alt="Обложка будущей книги">
+
+        <h3>«Тени за спиной»</h3>
+
+        <p>Приключенческое фэнтези, поиск себя и силы.</p>
+
+        <a href="book-shadows.html" class="btn">Подробнее</a>
+
+      </article>
+
+    </div>
+
+  </main>
+
+</body>
+
+</html>
+

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Об авторе — [Имя Автора]</title>
+
+  <style>
+
+    :root {
+
+      --primary: #2c3e50;
+
+      --accent: #e67e22;
+
+      --bg: #f4f6f9;
+
+      --text: #333;
+
+    }
+
+    body {
+
+      font-family: Arial, sans-serif;
+
+      margin: 0;
+
+      padding: 0;
+
+      background: var(--bg);
+
+      color: var(--text);
+
+    }
+
+    header {
+
+      background: white;
+
+      padding: 1.5rem 2rem;
+
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+    }
+
+    .header-container {
+
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 1rem;
+
+    }
+
+    .logo {
+
+      font-weight: bold;
+
+      font-size: 1.8rem;
+
+      color: var(--primary);
+
+      line-height: 1;
+
+    }
+
+    .nav-links a {
+
+      margin-left: 0.8rem;
+
+      text-decoration: none;
+
+      color: var(--primary);
+
+      font-weight: 800;
+
+      font-size: 1.6rem;
+
+      padding: 0.9rem 1.2rem;
+
+      border-radius: 8px;
+
+      transition: background 0.2s;
+
+    }
+
+    .nav-links a:hover { background: #eee; }
+
+    .main-container {
+
+      max-width: 1100px;
+
+      margin: 0 auto;
+
+      padding: 2rem;
+
+    }
+
+ 
+
+    /* Блоки с отступами и карточками */
+
+    .section { margin-bottom: 4rem; }
+
+    .author-intro {
+
+      text-align: center;
+
+      max-width: 700px;
+
+      margin: 0 auto 3rem auto;
+
+    }
+
+    .author-photo-placeholder {
+
+      width: 200px;
+
+      height: 200px;
+
+      margin: 0 auto 2rem auto;
+
+      background: #34495e;
+
+      border-radius: 12px;
+
+      color: #bdc3c7;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-size: 1.1rem;
+
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+
+    }
+
+ 
+
+    .skills-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+      gap: 1.8rem;
+
+    }
+
+    .skill-card {
+
+      padding: 2rem;
+
+      background: white;
+
+      border-radius: 10px;
+
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+
+      text-align: center;
+
+    }
+
+    .skill-icon {
+
+      font-size: 2.4rem;
+
+      margin-bottom: 1rem;
+
+    }
+
+ 
+
+    .cta-buttons {
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 1.4rem;
+
+      flex-wrap: wrap;
+
+    }
+
+    .btn {
+
+      padding: 1.8rem 3rem;
+
+      font-size: 1.4rem;
+
+      border: none;
+
+      border-radius: 10px;
+
+      cursor: pointer;
+
+      font-weight: 800;
+
+      text-decoration: none;
+
+      color: white;
+
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+
+      transition: transform 0.15s, opacity 0.2s;
+
+    }
+
+    .btn:active { transform: scale(0.97); }
+
+    .btn-buy { background: var(--accent); }
+
+    .btn-read-free { background: #3498db; }
+
+    .btn-sample { background: #9b59b6; }
+
+ 
+
+    @media (max-width: 768px) {
+
+      .header-container { flex-direction: column; gap: 1.2rem; }
+
+      .nav-links a {
+
+        margin: 0.6rem auto;
+
+        display: block;
+
+        text-align: center;
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+      }
+
+      .cta-buttons { flex-direction: column; }
+
+      .btn {
+
+        width: 100%;
+
+        text-align: center;
+
+        box-sizing: border-box;
+
+        padding: 1.6rem 1.2rem;
+
+      }
+
+      .logo { font-size: 1.6rem; }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <div class="header-container">
+
+      <div class="logo">Книги [Имя Автора]</div>
+
+      <nav class="nav-links">
+
+        <a href="index.html">Главная</a>
+
+        <a href="books.html">Другие книги</a>
+
+        <a href="about.html">Об авторе</a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+ 
+
+  <main class="main-container">
+
+    <section class="section">
+
+      <h1 style="text-align:center;">Об авторе</h1>
+
+      <div class="author-intro">
+
+        <!-- Сюда можно поставить реальную фото, пока заглушка -->
+
+        <div class="author-photo-placeholder">Фото автора</div>
+
+        <p>Я пишу реалистичное фэнтези, где магия — это не «волшебная палочка», а система с внутренней логикой и ценой. В основе моих миров — наблюдения за тем, как устроены память, восприятие и тело человека, а также простые физические принципы.</p>
+
+      </div>
+
+ 
+
+      <div class="skills-grid">
+
+        <!-- Блок 1: нейронауки и память -->
+
+        <article class="skill-card">
+
+          <div class="skill-icon">🧠</div>
+
+          <h3>Нейронауки и память</h3>
+
+          <p>Изучаю аналогии между биологической и компьютерной памятью, физиологию сна и то, как мозг удерживает смыслы. Это помогает делать «магические способности» в книгах правдоподобными.</p>
+
+        </article>
+
+ 
+
+        <!-- Блок 2: физика и материалы -->
+
+        <article class="skill-card">
+
+          <div class="skill-icon">🧲</div>
+
+          <h3>Физика и материалы</h3>
+
+          <p>Интересуюсь магнитным чувством, магнетитом, магнитострикцией и тем, как природные и искусственные материалы могут преобразовывать поле в звук. Эти идеи иногда становятся основой для артефактов и технологий в моих историях.</p>
+
+        </article>
+
+ 
+
+        <!-- Блок 3: писательское ремесло -->
+
+        <article class="skill-card">
+
+          <div class="skill-icon">✍️</div>
+
+          <h3>Писательское ремесло</h3>
+
+          <p>Работаю над структурой сюжета, разбивкой на главы, психологией героя и бытовыми деталями, чтобы мир ощущался живым. Публикуюсь на Author.Today и других площадках.</p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+ 
+
+    <section class="section" style="text-align:center;">
+
+      <h2>Что почитать в первую очередь</h2>
+
+      <p>Если хочешь начать с главного — вот мои ключевые проекты:</p>
+
+      <div class="cta-buttons">
+
+        <a href="index.html" class="btn btn-buy">«Борис» — главная история</a>
+
+        <a href="book-mystery-city.html" class="btn btn-read-free">«Город без отражений»</a>
+
+      </div>
+
+    </section>
+
+ 
+
+    <section>
+
+      <h2 style="text-align:center;">Где следить за новостями</h2>
+
+      <p style="text-align:center;">Анонсы новых глав, заметки о создании миров и технические детали — в моём блоге на Author.Today и в ВК.</p>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>
+

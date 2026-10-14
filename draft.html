@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Черновик — работа над книгой</title>
+
+  <style>
+
+    :root {
+
+      --primary: #2c3e50;
+
+      --accent: #e67e22;
+
+      --bg: #f4f6f9;
+
+      --text: #333;
+
+      --paper: #ffffff;
+
+    }
+
+    body {
+
+      font-family: Arial, sans-serif;
+
+      margin: 0;
+
+      padding: 0;
+
+      background: var(--bg);
+
+      color: var(--text);
+
+    }
+
+    header {
+
+      background: white;
+
+      padding: 1.5rem 2rem;
+
+      box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+    }
+
+    .header-container {
+
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 1rem;
+
+    }
+
+    .logo {
+
+      font-weight: bold;
+
+      font-size: 1.8rem;
+
+      color: var(--primary);
+
+      line-height: 1;
+
+    }
+
+    .nav-links a {
+
+      margin-left: 0.8rem;
+
+      text-decoration: none;
+
+      color: var(--primary);
+
+      font-weight: 800;
+
+      font-size: 1.6rem;
+
+      padding: 0.9rem 1.2rem;
+
+      border-radius: 8px;
+
+      transition: background 0.2s;
+
+    }
+
+    .nav-links a:hover { background: #eee; }
+
+    /* Выделенная кнопка «Черновик» */
+
+    .nav-links a.active-draft {
+
+      background: #eee !important;
+
+      color: var(--accent) !important;
+
+      border: 2px solid var(--accent);
+
+    }
+
+ 
+
+    .main-container {
+
+      max-width: 1100px;
+
+      margin: 0 auto;
+
+      padding: 2rem;
+
+    }
+
+ 
+
+    /* Стили для черновика */
+
+    .draft-panel {
+
+      background: var(--paper);
+
+      padding: 2.5rem;
+
+      border-radius: 12px;
+
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+
+      border: 1px solid #e0e0e0;
+
+    }
+
+    .draft-header {
+
+      text-align: center;
+
+      margin-bottom: 2rem;
+
+    }
+
+    .stats-bar {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      background: #f8f9fa;
+
+      padding: 0.7rem 1.4rem;
+
+      border-radius: 6px;
+
+      border: 1px solid #e9ecef;
+
+      margin-bottom: 1.4rem;
+
+      font-size: 0.95rem;
+
+      color: #555;
+
+    }
+
+    .stat-item strong { color: var(--accent); }
+
+    
+
+    .draft-textarea {
+
+      width: 100%;
+
+      min-height: 400px;
+
+      padding: 1.4rem;
+
+      border: 2px dashed #bdc3c7;
+
+      border-radius: 8px;
+
+      font-family: inherit;
+
+      font-size: 1.1rem;
+
+      line-height: 1.6;
+
+      resize: vertical;
+
+      outline: none;
+
+      transition: border-color 0.2s, background 0.2s;
+
+      box-sizing: border-box;
+
+    }
+
+    .draft-textarea:focus {
+
+      border-color: var(--accent);
+
+      background: #fafafa;
+
+    }
+
+    .preview-area {
+
+      margin-top: 2.5rem;
+
+      padding: 1.8rem;
+
+      background: #f8f9fa;
+
+      border-radius: 8px;
+
+      border-left: 5px solid var(--accent);
+
+    }
+
+    .preview-label {
+
+      font-weight: 800;
+
+      color: var(--primary);
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 1rem;
+
+      display: block;
+
+    }
+
+    .preview-content {
+
+      line-height: 1.7;
+
+      color: #444;
+
+    }
+
+    .preview-content p { margin: 1rem 0; }
+
+    .preview-content h2, .preview-content h3 { margin: 1.2rem 0 0.6rem 0; color: var(--primary); }
+
+ 
+
+    .cta-buttons {
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 1.4rem;
+
+      flex-wrap: wrap;
+
+      margin-top: 2.5rem;
+
+    }
+
+    .btn {
+
+      padding: 1.8rem 3rem;
+
+      font-size: 1.4rem;
+
+      border: none;
+
+      border-radius: 10px;
+
+      cursor: pointer;
+
+      font-weight: 800;
+
+      text-decoration: none;
+
+      color: white;
+
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+
+      transition: transform 0.15s, opacity 0.2s;
+
+    }
+
+    .btn:active { transform: scale(0.97); }
+
+    .btn-copy { background: #27ae60; }
+
+    .btn-save { background: var(--accent); }
+
+    .btn-clear { background: #95a5a6; }
+
+ 
+
+    @media (max-width: 768px) {
+
+      .header-container { flex-direction: column; gap: 1.2rem; }
+
+      .nav-links a {
+
+        margin: 0.6rem auto;
+
+        display: block;
+
+        text-align: center;
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+      }
+
+      .cta-buttons { flex-direction: column; }
+
+      .btn {
+
+        width: 100%;
+
+        text-align: center;
+
+        box-sizing: border-box;
+
+        padding: 1.6rem 1.2rem;
+
+      }
+
+      .logo { font-size: 1.6rem; }
+
+      .draft-textarea, .preview-area { min-height: 320px; }
+
+      .stats-bar { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <div class="header-container">
+
+      <div class="logo">Книги [Имя Автора]</div>
+
+      <nav class="nav-links">
+
+        <a href="index.html">Главная</a>
+
+        <a href="books.html">Другие книги</a>
+
+        <a href="about.html">Об авторе</a>
+
+        <!-- Кнопка «Черновик» теперь выделена -->
+
+        <a href="draft.html" class="active-draft">Черновик</a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+ 
+
+  <main class="main-container">
+
+    <section class="draft-panel">
+
+      <div class="draft-header">
+
+        <h1>Черновик: работа с текстом</h1>
+
+        <p>Скопируй сюда фрагмент главы, вариант аннотации или пост для блога — и сразу увидишь, как он выглядит в стиле сайта.</p>
+
+      </div>
+
+ 
+
+      <!-- Панель статистики -->
+
+      <div class="stats-bar">
+
+        <span>Слов: <strong id="wordCount">0</strong></span>
+
+        <span>Символов (с пробелами): <strong id="charCount">0</strong></span>
+
+      </div>
+
+ 
+
+      <textarea id="draftInput" class="draft-textarea" placeholder="Вставь текст сюда: главы, аннотации, посты, описания..."></textarea>
+
+ 
+
+      <div class="preview-area">
+
+        <span class="preview-label">Предпросмотр</span>
+
+        <div id="previewContent" class="preview-content">
+
+          <p>Здесь появится твой текст после вставки. Пока пусто — добавь что-нибудь!</p>
+
+        </div>
+
+      </div>
+
+ 
+
+      <div class="cta-buttons">
+
+        <button class="btn btn-copy" onclick="copyToClipboard()">📋 Копировать предпросмотр</button>
+
+        <button class="btn btn-save" onclick="saveDraft()">Сохранить (заметка)</button>
+
+        <button class="btn btn-clear" onclick="clearDraft()">Очистить всё</button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+ 
+
+  <script>
+
+    const input = document.getElementById('draftInput');
+
+    const preview = document.getElementById('previewContent');
+
+    const wordEl = document.getElementById('wordCount');
+
+    const charEl = document.getElementById('charCount');
+
+ 
+
+    function updateStats() {
+
+      const text = input.value;
+
+      
+
+      // Символы (включая пробелы)
+
+      const chars = text.length;
+
+      charEl.textContent = chars;
+
+ 
+
+      // Слова: считаем последовательности непробельных символов
+
+      const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+
+      wordEl.textContent = words;
+
+    }
+
+ 
+
+    function updatePreview() {
+
+      const text = input.value.trim();
+
+      if (!text) {
+
+        preview.innerHTML = '<p>Здесь появится твой текст после вставки. Пока пусто — добавь что-нибудь!</p>';
+
+        return;
+
+      }
+
+ 
+
+      let html = '';
+
+      const lines = text.split('\n');
+
+      for (const line of lines) {
+
+        const trimmed = line.trim();
+
+        if (!trimmed) {
+
+          html += '<br>';
+
+          continue;
+
+        }
+
+        if (trimmed.startsWith('# ')) {
+
+          const title = trimmed.slice(2).trim();
+
+          html += `<h2>${escapeHtml(title)}</h2>`;
+
+        } else if (trimmed.startsWith('## ')) {
+
+          const title = trimmed.slice(3).trim();
+
+          html += `<h3>${escapeHtml(title)}</h3>`;
+
+        } else {
+
+          html += `<p>${escapeHtml(trimmed)}</p>`;
+
+        }
+
+      }
+
+      preview.innerHTML = html;
+
+    }
+
+ 
+
+    function escapeHtml(str) {
+
+      return str
+
+        .replace(/&/g, '&amp;')
+
+        .replace(/</g, '&lt;')
+
+        .replace(/>/g, '&gt;')
+
+        .replace(/"/g, '&quot;')
+
+        .replace(/'/g, '&#039;');
+
+    }
+
+ 
+
+    input.addEventListener('input', () => {
+
+      updateStats();
+
+      updatePreview();
+
+    });
+
+ 
+
+    // Копирование в буфер
+
+    function copyToClipboard() {
+
+      const content = preview.innerHTML;
+
+      if (!content.trim()) {
+
+        alert('Сначала добавь текст в поле — тогда можно будет скопировать предпросмотр.');
+
+        return;
+
+      }
+
+      navigator.clipboard.writeText(content).then(() => {
+
+        const btn = document.querySelector('.btn-copy');
+
+        const originalText = btn.innerText;
+
+        btn.innerText = '✅ Скопировано!';
+
+        setTimeout(() => { btn.innerText = originalText; }, 2000);
+
+      }).catch(err => {
+
+        console.error('Не удалось скопировать: ', err);
+
+        alert('Не удалось скопировать в буфер (зависит от браузера). Попробуй выделить и скопировать вручную.');
+
+      });
+
+    }
+
+ 
+
+    function clearDraft() {
+
+      input.value = '';
+
+      updateStats();
+
+      updatePreview();
+
+      input.focus();
+
+    }
+
+ 
+
+    function saveDraft() {
+
+      alert('Текст можно скопировать из поля или сохранить локально. На сервере он не хранится — это твой личный черновик.');
+
+    }
+
+ 
+
+    updateStats(); // первый запуск
+
+    updatePreview();
+
+  </script>
+
+</body>
+
+</html>
+
