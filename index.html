@@ -270,6 +270,64 @@
 
         padding: 1.6rem 1.2rem;
 
+.button-group {
+
+  display: flex;
+
+  gap: 12px; /* расстояние между кнопками */
+
+  flex-wrap: wrap;
+
+}
+
+.site-btn {
+
+  display: inline-block;
+
+  padding: 12px 20px;
+
+  background-color: #3b82f6; /* синий цвет */
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 6px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 16px;
+
+  transition: background-color 0.2s ease;
+
+}
+
+ 
+
+.site-btn:hover {
+
+  background-color: #2563eb; /* цвет при наведении */
+
+}
+
+ 
+
+.site-btn.external {
+
+  background-color: #10b981; /* зелёный для внешних ссылок */
+
+}
+
+ 
+
+.site-btn.external:hover {
+
+  background-color: #059669;
+
+}
+
+
+
       }
 
       .logo { font-size: 1.6rem; }
@@ -296,7 +354,7 @@
 
     <div class="header-container">
 
-      <div class="logo">Книги [Имя Автора]</div>
+      <div class="logo">Книги Владимира Михайленко</div>
 
       <nav class="nav-links">
 
@@ -306,6 +364,8 @@
 
         <a href="about.html">Об авторе</a>
 
+         <a href="draft.html" class="active-draft">/ Черновик</a>
+ 
       </nav>
 
     </div>
@@ -332,11 +392,16 @@
 
       <div class="cta-buttons">
 
-        <a href="/buy-boris" class="btn btn-buy">Купить книгу</a>
+<a
+href="https://bookriver.ru/book/chitatel356510-diplom-maga" class="site-btn external" target="_blank" rel="noopener noreferrer">Купить на Bookriver</a>
 
-        <a href="/free-chapter" class="btn btn-read-free">Читать бесплатно (глава)</a>
+ <a href="https://author.today/work/658246" class="site-btn external" target="_blank" rel="noopener noreferrer">Читать на Author.today</a>
 
-        <a href="/sample-pdf" class="btn btn-sample">Скачать фрагмент</a>
+<!-- Кнопка 4: страница book-mystery-city.html -->
+
+  <a href="book-mystery-city.html" class="site-btn">Ознакомительный фрагмент</a>
+
+
 
       </div>
 
