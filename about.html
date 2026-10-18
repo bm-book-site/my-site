@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Об авторе — [Имя Автора]</title>
+  <title>Об авторе — Владимире Михайленко</title>
 
   <style>
 
@@ -270,6 +270,74 @@
 
       }
 
+.book-cover {
+
+  display: block;
+
+  max-width: 100%;
+
+  height: auto;
+
+  margin-bottom: 24px;           /* отступ между обложкой и кнопками */
+
+}
+
+ 
+
+.buttons-container {
+
+  display: flex;
+
+  flex-wrap: wrap;               /* кнопки перенесутся на новую строку, если места мало */
+
+  justify-content: center;       /* центрируем по горизонтали */
+
+  gap: 14px;                     /* расстояние между кнопками */
+
+  margin: 0 auto;                /* дополнительно центрирует сам блок, если нужно */
+
+}
+
+ 
+
+.site-btn {
+
+  padding: 12px 22px;
+
+  background-color: #4a90e2;     /* синий цвет кнопок */
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  border-radius: 6px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 16px;
+
+  transition: background-color 0.2s ease, transform 0.1s ease;
+
+}
+
+ 
+
+.site-btn:hover {
+
+  background-color: #357abd;     /* чуть темнее при наведении */
+
+}
+
+ 
+
+.site-btn:active {
+
+  transform: scale(0.98);       /* лёгкая «вдавленность» при клике */
+
+}
+
+
+
       .logo { font-size: 1.6rem; }
 
     }
@@ -284,7 +352,7 @@
 
     <div class="header-container">
 
-      <div class="logo">Книги [Имя Автора]</div>
+      <div class="logo">Книги Владимира Михайленко</div>
 
       <nav class="nav-links">
 
@@ -293,6 +361,8 @@
         <a href="books.html">Другие книги</a>
 
         <a href="about.html">Об авторе</a>
+
+ <a href="draft.html" class="active-draft">/ Черновик</a>
 
       </nav>
 
@@ -312,7 +382,9 @@
 
         <!-- Сюда можно поставить реальную фото, пока заглушка -->
 
-        <div class="author-photo-placeholder">Фото автора</div>
+     <!--   <div 
+ class="author-photo-placeholder">Фото автора 
+</div>. -->
 
         <p>Я пишу реалистичное фэнтези, где магия — это не «волшебная палочка», а система с внутренней логикой и ценой. В основе моих миров — наблюдения за тем, как устроены память, восприятие и тело человека, а также простые физические принципы.</p>
 
@@ -376,9 +448,9 @@
 
       <div class="cta-buttons">
 
-        <a href="index.html" class="btn btn-buy">«Борис» — главная история</a>
+        <a href="index.html" class="btn btn-buy">«Диплом мага» — главная история</a>
 
-        <a href="book-mystery-city.html" class="btn btn-read-free">«Город без отражений»</a>
+        <a href="book-mystery-city.html" class="btn btn-read-free">«Разрушитель»</a>
 
       </div>
 
@@ -390,7 +462,9 @@
 
       <h2 style="text-align:center;">Где следить за новостями</h2>
 
-      <p style="text-align:center;">Анонсы новых глав, заметки о создании миров и технические детали — в моём блоге на Author.Today и в ВК.</p>
+      <p style="text-align:center;">Анонсы новых глав, заметки о создании миров и технические детали — в моём блоге на Author.Today или в блоге на Bookriver.</p>
+
+<h2 style="text-align:center;">Мои кантакты:   mwoak11@yandex.ru</h2>
 
     </section>
 
