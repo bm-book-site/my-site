@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Книга «Борис» — фэнтези с психологией</title>
+  <title>Книга «Диплом мага» — фэнтези в быту</title>
 
   <style>
 
@@ -17,7 +17,7 @@
       --primary: #2c3e50;
 
       --accent: #e67e22;
-
+да
       --bg: #f4f6f9;
 
       --text: #333;
@@ -342,6 +342,74 @@
 
       }
 
+.book-cover {
+
+  display: block;
+
+  max-width: 100%;
+
+  height: auto;
+
+  margin-bottom: 24px;           /* отступ между обложкой и кнопками */
+
+}
+
+ 
+
+.buttons-container {
+
+  display: flex;
+
+  flex-wrap: wrap;               /* кнопки перенесутся на новую строку, если места мало */
+
+  justify-content: center;       /* центрируем по горизонтали */
+
+  gap: 14px;                     /* расстояние между кнопками */
+
+  margin: 0 auto;                /* дополнительно центрирует сам блок, если нужно */
+
+}
+
+ 
+
+.site-btn {
+
+  padding: 12px 22px;
+
+  background-color: #4a90e2;     /* синий цвет кнопок */
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  border-radius: 6px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 16px;
+
+  transition: background-color 0.2s ease, transform 0.1s ease;
+
+}
+
+ 
+
+.site-btn:hover {
+
+  background-color: #357abd;     /* чуть темнее при наведении */
+
+}
+
+ 
+
+.site-btn:active {
+
+  transform: scale(0.98);       /* лёгкая «вдавленность» при клике */
+
+}
+
+
+
     }
 
   </style>
@@ -378,30 +446,34 @@
 
     <section class="book-hero">
 
-      <h1>«Борис»: история, которая остаётся с тобой</h1>
+      <h1>«Диплом мага»: история, которая останется с тобой</h1>
 
-      <p>Фэнтези с глубокой психологией и вниманием к деталям. Магия, долг и цена возвращения домой.</p>
+      <p>Фэнтези с глубокой психологией и вниманием к деталям. Магия, адаптивные сети, долг и цена.</p>
 
-      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 480'%3E%3Crect width='100%25' height='100%25' fill='%232c3e50'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='28' font-family='Arial,sans-serif' fill='%23f1c40f' font-weight='bold'%3EОбложка: Борис%3C/text%3E%3C/svg%3E" alt="Обложка книги «Борис»" class="book-cover">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 480'%3E%3Crect width='100%25' height='100%25' fill='%232c3e50'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='28' font-family='Arial,sans-serif' fill='%23f1c40f' font-weight='bold'%3E Диплом мага%3C/text%3E%3C/svg%3E" alt="Обложка книги «Диплом мага»" class="book-cover">
 
- 
-
-      <a href="books.html" class="btn-other-books">Другие книги автора</a>
+ <h2></h2>
 
  
 
       <div class="cta-buttons">
 
 <a
-href="https://bookriver.ru/book/chitatel356510-diplom-maga" class="site-btn external" target="_blank" rel="noopener noreferrer">Купить на Bookriver</a>
-
+href="https://bookriver.ru/book/chitatel356510-diplom-maga?pid=GM2TMNJRGA" class="site-btn external" target="_blank" rel="noopener noreferrer">Купить на Bookriver</a>
+<h2></h2>
  <a href="https://author.today/work/658246" class="site-btn external" target="_blank" rel="noopener noreferrer">Читать на Author.today</a>
 
+<h2></h2>
 <!-- Кнопка 4: страница book-mystery-city.html -->
 
   <a href="book-mystery-city.html" class="site-btn">Ознакомительный фрагмент</a>
 
+<h2></h2>
+<hr class="scene-break">
 
+     <a href="books.html" class="btn-other-books">Другие книги автора</a>
+
+ <h2></h2>
 
       </div>
 
@@ -427,7 +499,7 @@ href="https://bookriver.ru/book/chitatel356510-diplom-maga" class="site-btn exte
 
           <h3>Психология героя</h3>
 
-          <p>Борис не просто «спасает мир» — он разбирается с собой и прошлым.</p>
+          <p>Борис не просто «спасает мир» — он делает его лучше, надёжней, адаптивней.</p>
 
         </div>
 
